@@ -1,5 +1,4 @@
-# "adi_gpu" crate - Licensed under the MIT LICENSE
-#  * Copyright (c) 2017-2018  Jeron A. Lau <jeron.lau@plopgrizzly.com>
+# "adi_gpu" - Aldaron's Device Interface / GPU
 #                             _        _
 #                            /@\——————/@\
 # .———  .                   |   o    o   |     .————      .            .
@@ -10,36 +9,33 @@
 # |     |   ———   |       |                |    ————  |   | :——— :———  |   |
 #                 |        \              /                              __/
 #                           ¯————————————¯
+#
+# Copyright Jeron A. Lau 2017 - 2018.
+# Distributed under the Boost Software License, Version 1.0.
+# (See accompanying file LICENSE_1_0.txt or copy at
+# https://www.boost.org/LICENSE_1_0.txt)
 
 [package]
 name = "adi_gpu"
-version = "0.7.0"
+version = "0.8.0"
 authors = [
 	"Jeron A. Lau <jeron.lau@plopgrizzly.com>",
 ]
-
-license = "MIT"
+license = "BSL-1.0"
 documentation = "https://docs.rs/adi_gpu"
-homepage = "http://plopgrizzly.com/adi_gpu"
+homepage = "https://plopgrizzly.com/adi_gpu"
 repository = "https://github.com/plopgrizzly/adi_gpu"
-
-readme = "README.md"
+readme = "readme.md"
 description = "GPU interface - render graphics and do fast calculations"
 keywords = ["vulkan", "graphics", "rendering", "opengl", "gpu"]
 categories = ["rendering::graphics-api", "hardware-support",
 	"rendering::engine", "rendering"]
 
-exclude = [
-	"examples/*", "code_of_conduct.md", "contributing.md", ".gitignore",
-	"_config.yml", "ISSUE_TEMPLATE.md", "icon.png", "icon.ico"
-]
-
 [dependencies]
-ami = "^0.8"
-adi_gpu_base = "^0.6"
+adi_gpu_base = "0.7"
 
 [target.'cfg(any(unix, target_os="windows", target_os="web"))'.dependencies]
-adi_gpu_opengl = "^0.4"
+adi_gpu_opengl = "0.5"
 
 [target.'cfg(any(unix, target_os="windows", target_os="nintendo_switch"))'.dependencies]
-adi_gpu_vulkan = "^0.5"
+adi_gpu_vulkan = "0.6"

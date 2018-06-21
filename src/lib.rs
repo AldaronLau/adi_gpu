@@ -1,20 +1,15 @@
-// "adi_gpu" crate - Licensed under the MIT LICENSE
-//  * Copyright (c) 2017-2018  Jeron A. Lau <jeron.lau@plopgrizzly.com>
+// "adi_gpu" - Aldaron's Device Interface / GPU
 //
-//! Aldaron's Device Interface / GPU is a library developed by Plop Grizzly for
-//! interfacing with the GPU to render graphics or do fast calculations.
+// Copyright Jeron A. Lau 2017 - 2018.
+// Distributed under the Boost Software License, Version 1.0.
+// (See accompanying file LICENSE_1_0.txt or copy at
+// https://www.boost.org/LICENSE_1_0.txt)
+//
+//! Interface with the GPU to render graphics or do fast calculations.
 
 extern crate adi_gpu_base;
-extern crate ami;
 
-pub use ami::Mat4;
-
-use adi_gpu_base as base;
-
-pub use base::{
-	afi, Graphic, Model, TexCoords, Gradient, Shape, Input, Display,
-	Texture
-};
+pub use adi_gpu_base::*;
 
 /// Create a new Vulkan / OpenGL Display.
 pub fn new_display<G: AsRef<Graphic>>(title: &str, icon: G)
