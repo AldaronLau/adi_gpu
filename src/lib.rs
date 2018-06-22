@@ -18,7 +18,11 @@ pub fn new_display<G: AsRef<Graphic>>(title: &str, icon: G)
 	let mut err = "".to_string();
 
 	// Try Vulkan first.
-	#[cfg(any(unix, target_os="windows", target_os="nintendo_switch"))] {
+	#[cfg(any(
+		target_os="macos", target_os="android", target_os="linux",
+		target_os="windows", target_os="nintendo_switch"
+	))]
+	{
 		extern crate adi_gpu_vulkan;
 
 		match adi_gpu_vulkan::new(title, &icon) {
@@ -29,7 +33,11 @@ pub fn new_display<G: AsRef<Graphic>>(title: &str, icon: G)
 	}
 
 	// Fallback on OpenGL/OpenGLES
-	#[cfg(any(unix, target_os="windows", target_os="web"))] {
+	#[cfg(any(
+		target_os="android", target_os="linux", target_os="windows",
+		target_os="web"
+	))]
+	{
 		extern crate adi_gpu_opengl;
 
 		match adi_gpu_opengl::new(title, &icon) {

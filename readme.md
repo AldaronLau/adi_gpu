@@ -16,6 +16,9 @@ Interface with the GPU to render graphics or do fast calculations.
 * Render without a window.
 
 ## Change Log
+### 0.9
+* Update to adi\_gpu\_base 0.8.
+
 ### 0.8
 * Update dependencies.
 
