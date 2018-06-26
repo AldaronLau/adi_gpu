@@ -17,7 +17,7 @@
 
 [package]
 name = "adi_gpu"
-version = "0.9.0"
+version = "0.10.0"
 authors = [
 	"Jeron A. Lau <jeron.lau@plopgrizzly.com>",
 ]
@@ -32,10 +32,10 @@ categories = ["rendering::graphics-api", "hardware-support",
 	"rendering::engine", "rendering"]
 
 [dependencies]
-adi_gpu_base = "0.8"
+adi_gpu_base = "0.9"
 
 [target.'cfg(any(target_os="macos", target_os="android", target_os="linux", target_os="windows", target_os="nintendo_switch"))'.dependencies]
-adi_gpu_vulkan = "0.7"
+adi_gpu_vulkan = "0.8"
 
 [target.'cfg(any(target_os="android", target_os="linux", target_os="windows", target_os="web"))'.dependencies]
-adi_gpu_opengl = "0.6"
+adi_gpu_opengl = "0.7"

@@ -27,7 +27,7 @@ pub fn new_display<G: AsRef<Graphic>>(title: &str, icon: G)
 
 		match adi_gpu_vulkan::new(title, &icon) {
 			Ok(vulkan) => return Ok(vulkan),
-			Err(vulkan) => err.push_str(vulkan),
+			Err(vulkan) => err.push_str(&vulkan),
 		}
 		err.push('\n');
 	}
