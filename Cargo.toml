@@ -32,7 +32,7 @@ categories = ["rendering::graphics-api", "hardware-support",
 adi_gpu_base = "0.11"
 
 [target.'cfg(any(target_os="macos", target_os="android", target_os="linux", target_os="windows", target_os="nintendo_switch"))'.dependencies]
-adi_gpu_vulkan = "0.8"
+adi_gpu_vulkan = "0.11"
 
 [target.'cfg(any(target_os="android", target_os="linux", target_os="windows", target_os="web"))'.dependencies]
 adi_gpu_opengl = "0.11"
